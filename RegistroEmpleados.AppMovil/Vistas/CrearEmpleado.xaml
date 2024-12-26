@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistroEmpleados.AppMovil.Vistas.CrearEmpleado"
+             Title="CrearEmpleado">
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <Picker Title="Seleccionar Cargo"
+                ItemsSource="{Binding Cargos}"
+                ItemDisplayBinding="{Binding Nombre}"
+                x:Name="cargoPicker"/>
+        <Entry Placeholder="Primer Nombre"
+                   x:Name="primerNombreEntry"/>
+        <Entry Placeholder="Segundo Nombre"
+                            x:Name="segundoNombreEntry"/>
+        <Entry Placeholder="Primer Apellido"
+                    x:Name="primerApellidoEntry"/>
+        <Entry Placeholder="Segundo Apellido"
+            x:Name="segundoApellidoEntry"/>
+        <Entry Placeholder="Correo Electrónico"
+                    x:Name="correoEntry"/>
+        <Entry Placeholder="Sueldo"
+            x:Name="sueldoEntry"
+               Keyboard="Numeric"/>
+        <DatePicker x:Name="fechaInicioPicker"/>
+        <Picker Title="Seleccionar estado"
+                x:Name="statePicker">
+            <Picker.Items>
+                <x:String>Activo</x:String>
+                <x:String>Inactivo</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button Text="Guardar"
+                x:Name="guardarButton"
+                Clicked="guardarButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
